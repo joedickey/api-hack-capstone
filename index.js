@@ -1,6 +1,6 @@
-const searchURL = "https://developers.themoviedb.org/3/"
+const searchURL = "https://api.themoviedb.org/3/"
 const imagePathUrl = "https://image.tmdb.org/t/p/original"
-const apiKey = "df3341688556ba5dadfc14be29cc9299"
+const apiKeyQuery = "?api_key=df3341688556ba5dadfc14be29cc9299"
 
 /* other links 
 Get ID for person: https://developers.themoviedb.org/3/search/search-people
@@ -10,29 +10,48 @@ Movie MPAA rating: https://api.themoviedb.org/3/movie/13/release_dates?api_key=d
 */
 
 // HTML TEMPLATES 
-
+function actorProfile(image, name){
+   return $('.actor-profile').html(`<img id="profile-pic" src="${image}" alt="Actor Picture">
+    <h3 id="display-name">${name}</h3>`)
+}
 
 // MAIN FUNCTIONS 
 
-function getPersonDetails(){
+function getPersonDetails(responseJson, name){
     //get ID number for person and display image and name
+    //const formattedDataName = for dealing with case sensitivity and odd characters
+    //const formattedInputName =
+    const displayName = responseJson.results[0].name;
+    const profilePicPath = responseJson.results[0].profile_path;
+    const nameId = responseJson.results[0].id;
+    const profilePicUrl = imagePathUrl + profilePicPath;
+    if(responseJson.results[0].name == name){
+        actorProfile(profilePicUrl, displayName);
+        console.log(nameId); // run this id to getMoviesList function
+    }
+    else {
+        return $('#error-message').text("We could not find an actor with that name.")
+    }
 }
 
 function getPersonByName(name){
     //locate person in API database by name
-    console.log(name);
+    const endpointSearchPeople = "search/person";
+    const encodedName = `${encodeURIComponent(name)}`;
+    const url = searchURL + endpointSearchPeople + apiKeyQuery + "&query=" + encodedName;
 
     fetch(url)
-        .then(response => {
-            if(response.ok){
-                return response.json();
+        .then(response => response.json())
+        .then(responseJson => {
+            if(responseJson.results.length > 0){
+                return getPersonDetails(responseJson, name);
             }
-            throw Error(response.statusText);
-        })
-        .then(responseJson => getPersonDetails(responseJson))
-        .catch(err => {
-            $('#error-message').text("I'm sorry we did not find that actor.")
-        })
+            else {
+                return $('#error-message').text("We could not find an actor with that name.")
+            }
+        }
+            )
+        .catch(err => $('#error-message').text("Oops, something went wrong on our end. Please check back later."));
 }
 
 // EVENT HANDLERS 
@@ -44,7 +63,12 @@ function watchForm(){
         const name = $('#search-bar').val();
         getPersonByName(name);
         $('#search-bar').val('');
+        $('#error-message').text('');
     })
 }
 
-$(watchForm)
+$(function(){
+    watchForm();
+    //getPersonByName();
+    //getPersonDetails();
+});

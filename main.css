@@ -18,7 +18,27 @@
     padding: 50px 0px;
 }
 
-h1, h2 {
+.actor-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+h1, h2 , h3 {
     font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    display: flex;
+}
+
+#display-name {
+  margin-top: 5px;
+}
+
+#profile-pic {
+    max-width: 86.66px;
+}
+
+#error-message {
+    color: red;
     text-align: center;
 }
