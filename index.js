@@ -19,13 +19,13 @@ function actorProfile(image, name){
 
 function getPersonDetails(responseJson, name){
     //get ID number for person and display image and name
-    //const formattedDataName = for dealing with case sensitivity and odd characters
-    //const formattedInputName =
     const displayName = responseJson.results[0].name;
     const profilePicPath = responseJson.results[0].profile_path;
     const nameId = responseJson.results[0].id;
     const profilePicUrl = imagePathUrl + profilePicPath;
-    if(responseJson.results[0].name == name){
+    const formattedDataName = displayName.replaceAll(" ","").replaceAll("é","e").replaceAll("-", "").toLowerCase();
+    const formattedInputName = name.replaceAll(" ","").replaceAll("é","e").replaceAll("-", "").toLowerCase();
+    if(formattedDataName == formattedInputName){
         actorProfile(profilePicUrl, displayName);
         console.log(nameId); // run this id to getMoviesList function
     }
