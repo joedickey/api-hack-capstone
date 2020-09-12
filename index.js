@@ -15,11 +15,23 @@ function actorProfile(image, name){
     <h3 id="display-name">${name}</h3>`)
 }
 
+function displayMovieDetails(responseJson){
+    console.log(responseJson.title); //GET BACK TO WORK HERE
+}
+
 // MAIN FUNCTIONS 
 
 function getMovieDetails(idArray){
     // cycle through array of movie IDs and send details to displayMovieDetails function
-    console.log(idArray);
+    for(i = 0; i < idArray.length; i++){
+    let url = `https://api.themoviedb.org/3/movie/${idArray[i]}?api_key=df3341688556ba5dadfc14be29cc9299`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(responseJson => displayMovieDetails(responseJson))
+        .catch(err => $('#error-message').text("Oops, something went wrong on our end. Please check back later."))
+    }
+    
 }
 
 function getMovieListIds(list){
