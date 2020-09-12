@@ -17,17 +17,42 @@ function actorProfile(image, name){
 
 // MAIN FUNCTIONS 
 
+function getMovieDetails(idArray){
+    // cycle through array of movie IDs and send details to displayMovieDetails function
+    console.log(idArray);
+}
+
+function getMovieListIds(list){
+    // create and array of IDs for filmography of the actor
+    const movieIdArray = [];
+    for (i = 0; i < list.cast.length; i++){
+        movieIdArray.push(list.cast[i].id);
+    }
+    getMovieDetails(movieIdArray);
+}
+
+function getMoviesList(id){
+    // get filmography by actor ID
+    const endpointMovieCredits = `person/${id}/movie_credits`;
+    const url = searchURL + endpointMovieCredits + apiKeyQuery;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(responseJson => getMovieListIds(responseJson))
+        .catch(err => $('#error-message').text("Oops, something went wrong on our end. Please check back later."))
+}
+
 function getPersonDetails(responseJson, name){
     //get ID number for person and display image and name
     const displayName = responseJson.results[0].name;
     const profilePicPath = responseJson.results[0].profile_path;
     const nameId = responseJson.results[0].id;
     const profilePicUrl = imagePathUrl + profilePicPath;
-    const formattedDataName = displayName.replaceAll(" ","").replaceAll("é","e").replaceAll("-", "").toLowerCase();
+    const formattedDataName = displayName.replaceAll(" ","").replaceAll("é","e").replaceAll("-", "").toLowerCase(); //****revisit */
     const formattedInputName = name.replaceAll(" ","").replaceAll("é","e").replaceAll("-", "").toLowerCase();
     if(formattedDataName == formattedInputName){
         actorProfile(profilePicUrl, displayName);
-        console.log(nameId); // run this id to getMoviesList function
+        getMoviesList(nameId);
     }
     else {
         return $('#error-message').text("We could not find an actor with that name.")
