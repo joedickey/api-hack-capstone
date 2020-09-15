@@ -15,13 +15,39 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px 0px;
+    padding-bottom: 30px;
+    
 }
 
 .actor-profile {
     display: flex;
     flex-direction: column;
     align-items: center; 
+    margin-top: 50px;
+}
+
+ul#results {
+    list-style: none;
+    padding: 0px;
+}
+
+li.movie-display {
+    display: flex;
+    flex-direction: row;
+    max-width: 800px;
+    margin-bottom: 40px;
+    padding: 0px 10px;
+
+}
+
+div.info-row {
+    display: flex;
+    flex-direction: row;
+    max-width: 600px;
+}
+   
+.text-elements {
+    margin-left: 5px;
 }
 
 h1, h2 , h3 {
@@ -41,4 +67,31 @@ h1, h2 , h3 {
 #error-message {
     color: red;
     text-align: center;
+}
+
+div.info-row > h3, p {
+    margin: 0px;
+    padding: 0px 3px;
+}
+
+.rating {
+    font-weight: bolder;
+}
+
+.overview {
+    margin-top: 5px;
+}
+
+#broken-image-format, .poster {
+    display: block;
+    width: 100px;
+    height: 144px;
+}
+
+.title {
+    text-align: left;
+}
+
+.release-year {
+    padding-top: 2px;
 }
