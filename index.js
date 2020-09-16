@@ -143,6 +143,7 @@ function watchForm(){
         $('#search-bar').val('');
         $('#error-message').text('');
         $('#results').empty();
+        console.clear();
     })
 }
 
