@@ -44,7 +44,7 @@ function displayMovieDetails(movieList){
 
 // MAIN FUNCTIONS 
 
-function rankMoviesByVoteAvg(movieDetails){ //maybe add mpaaRatings
+function rankMoviesByVoteAvg(movieDetails){
     // ranks movies in descending order from highest voter average
     const moviesRankedByVote = movieDetails.sort((a, b) => b.vote_average - a.vote_average);   
     displayMovieDetails(moviesRankedByVote);
@@ -143,6 +143,7 @@ function watchForm(){
         $('#search-bar').val('');
         $('#error-message').text('');
         $('#results').empty();
+        $('.actor-profile').empty();
         console.clear();
     })
 }
