@@ -99,7 +99,7 @@ function getMoviesList(id){
     fetch(url)
         .then(response => response.json())
         .then(responseJson => getMovieListIds(responseJson))
-        .catch(err => $('#error-message').text("Oops, something went wrong on our end. Please check back later."))
+        .catch(err => $('#error-message').text("Oops, something went wrong on our end. Please check back later!", err))
 }
 
 function getPersonDetails(responseJson, name){
@@ -136,7 +136,7 @@ function getPersonByName(name){
             }
         }
             )
-        .catch(err => $('#error-message').text("Oops, something went wrong on our end. Please check back later."));
+        .catch(err => $('#error-message').text("Oops, something went wrong on our end! Please check back later!", err));
 }
 
 // EVENT HANDLERS 
