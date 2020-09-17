@@ -53,14 +53,15 @@ function rankMoviesByVoteAvg(movieDetails){
 function getMovieDetails(idArray){
     // cycle through array of movie IDs and send details to displayMovieDetails function
     const movieDetailsArray = [];
+    const movieEndpoint = "movie/"
     for(i = 0; i < idArray.length; i++){
-        let url = `https://api.themoviedb.org/3/movie/${idArray[i]}?api_key=df3341688556ba5dadfc14be29cc9299`;
-       
+        let url = searchURL + movieEndpoint + idArray[i] + apiKeyQuery;
+    
        movieDetailsArray.push(
            fetch(url)
             .then(response => response.json())
             .then(function(responseJson){
-                if(responseJson.poster_path !== null && responseJson.release_date.substring(0, 4) <= new Date().getFullYear() && responseJson.release_date.substring(0, 4) !== "" && responseJson.genres.length > 0 && responseJson.imdb_id !== null){
+                if(responseJson.poster_path !== null && responseJson.release_date.substring(0, 4) <= new Date().getFullYear() && responseJson.release_date.substring(0, 4) !== "" && responseJson.genres.length > 0 && responseJson.imdb_id !== null && (responseJson.vote_count >= 5 && responseJson.popularity > 1)){
                     return responseJson; // filtering out results with broken images, unreleased movies, and movies without a genre listed.
                 } else {
                     console.log("filtered out based on perimeters");
