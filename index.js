@@ -115,9 +115,12 @@ function getPersonDetails(responseJson, name){
     // if(!displayName || !displayName.replaceAll){
     // //     $('#error-message').text("Oops! Something went wrong on our end! Please check back later! " + displayName)
     // // }
-    const formattedDataName = displayName.replaceAll(" ","").replaceAll("é","e").replaceAll("-", "").replaceAll(".", "").toLowerCase();
+    const formattedDataName = displayName.toLowerCase();
+    //const formattedDataName = displayName.replaceAll(" ","").replaceAll("é","e").replaceAll("-", "").replaceAll(".", "").toLowerCase();
     $('#error-message').append("2" + name); 
-    const formattedInputName = name.replaceAll(" ","").replaceAll("é","e").replaceAll("-", "").replaceAll(".", "").toLowerCase();
+    const formattedInputName = name.toLowerCase();
+    //const formattedInputName = name.replaceAll(" ","").replaceAll("é","e").replaceAll("-", "").replaceAll(".", "").toLowerCase();
+    $('#error-message').append("3" + name); 
     if(formattedDataName == formattedInputName){
         actorProfile(profilePicUrl, displayName);
         getMoviesList(nameId);
