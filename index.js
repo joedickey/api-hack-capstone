@@ -104,6 +104,10 @@ function getMoviesList(id){
 
 function getPersonDetails(responseJson, name){
     //get ID number for person and display image and name
+    //if(!responseJson || !displayName.replaceAll){
+        $('#error-message').text("Oops!" + responseJson));
+        return 
+    //}
     const displayName = responseJson.results[0].name;
     const profilePicPath = responseJson.results[0].profile_path;
     const nameId = responseJson.results[0].id;
