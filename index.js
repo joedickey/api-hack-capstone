@@ -1,6 +1,7 @@
 const searchURL = "https://api.themoviedb.org/3/"
 const imagePathUrl = "https://image.tmdb.org/t/p/original"
 const apiKeyQuery = "?api_key=df3341688556ba5dadfc14be29cc9299"
+const linkToMovieURL = "https://www.themoviedb.org/movie/"
 
 /* other links 
 Get ID for person: https://developers.themoviedb.org/3/search/search-people
@@ -22,10 +23,10 @@ function displayMovieDetails(movieList){
     
         $('#results').append(
             `<li class="movie-display">
-                 <span id="broken-image-format"><img src="${imagePathUrl + movieList[i].poster_path}" alt="Movie Poster" class="poster"></span>
+                 <span id="broken-image-format"><a href="${linkToMovieURL}${movieList[i].id}" target="_blank"><img src="${imagePathUrl + movieList[i].poster_path}" alt="Movie Poster" class="poster"></a></span>
                 <div class="text-elements">
                      <div class="info-row">
-                        <h3 class="title">${movieList[i].title}</h3>
+                        <h3 class="title"><a href="${linkToMovieURL}${movieList[i].id}" target="_blank">${movieList[i].title}</a></h3>
                         <p class="release-year">${"(" + movieList[i].release_date.substring(0, 4) + ")"}</p>
                      </div>
                     <div class="info-row">

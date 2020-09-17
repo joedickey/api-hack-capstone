@@ -105,3 +105,22 @@ div.info-row > h3, p {
     height: 144px;
 }
 
+/* LINK STYLES */
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: grey ;
+}
+
+a:active {
+    color: white;
+    text-shadow: 2px 3px 5px black;
+}
