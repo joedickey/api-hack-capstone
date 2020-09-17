@@ -106,16 +106,17 @@ function getPersonDetails(responseJson, name){
     //get ID number for person and display image and name
     //if(!responseJson || !displayName.replaceAll){
         $('#error-message').text("Oops!" + responseJson.results[0].name);
-        return 
+        //return 
     //}
     const displayName = responseJson.results[0].name;
     const profilePicPath = responseJson.results[0].profile_path;
     const nameId = responseJson.results[0].id;
     const profilePicUrl = imagePathUrl + profilePicPath;
-    if(!displayName || !displayName.replaceAll){
-        $('#error-message').text("Oops! Something went wrong on our end! Please check back later! " + displayName)
-    }
-    const formattedDataName = displayName.replaceAll(" ","").replaceAll("é","e").replaceAll("-", "").replaceAll(".", "").toLowerCase(); //****revisit */
+    // if(!displayName || !displayName.replaceAll){
+    // //     $('#error-message').text("Oops! Something went wrong on our end! Please check back later! " + displayName)
+    // // }
+    const formattedDataName = displayName.replaceAll(" ","").replaceAll("é","e").replaceAll("-", "").replaceAll(".", "").toLowerCase();
+    $('#error-message').append("2" + name); 
     const formattedInputName = name.replaceAll(" ","").replaceAll("é","e").replaceAll("-", "").replaceAll(".", "").toLowerCase();
     if(formattedDataName == formattedInputName){
         actorProfile(profilePicUrl, displayName);
@@ -143,7 +144,7 @@ function getPersonByName(name){
             }
         }
             )
-        .catch(err => $('#error-message').text("Oops, something went wrong on our end! Please check back later! " + err));
+        // .catch(err => $('#error-message').text("Oops, something went wrong on our end! Please check back later! " + err));
 }
 
 // EVENT HANDLERS 
