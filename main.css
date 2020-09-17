@@ -92,6 +92,10 @@ div.info-row > h3, p {
 
 .rating {
     font-weight: bolder;
+    border: 1px solid black;
+    text-align: center;
+    margin-right: 8px;
+
 }
 
 .overview {
@@ -117,6 +121,7 @@ footer p {
 #logo {
     max-height: 10px;
 }
+
 
 /* LINK STYLES */
 
