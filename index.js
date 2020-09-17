@@ -15,6 +15,12 @@ function actorProfile(image, name){
    return $('.actor-profile').html(`<img id="profile-pic" src="${image}" alt="Actor Picture">
     <h3 id="display-name">${name}</h3>`)
 }
+function showFooter(){
+    // removes .hidden class from footer
+    $('footer').removeClass('hidden');
+
+}
+  
 
 function displayMovieDetails(movieList){
     // display movie details and appends to UL in HTML
@@ -39,7 +45,6 @@ function displayMovieDetails(movieList){
                 </div>
             </li>`)
     }
-
 }
 
 
@@ -147,6 +152,7 @@ function watchForm(){
         $('#results').empty();
         $('.actor-profile').empty();
         console.clear();
+        showFooter();
     })
 }
 

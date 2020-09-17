@@ -52,6 +52,10 @@ div.info-row {
     margin-left: 5px;
 }
 
+.hidden {
+    display: none;
+}
+
 /* TEXT STYLES */
 
 h1 {
@@ -94,6 +98,11 @@ div.info-row > h3, p {
     margin-top: 5px;
 }
 
+footer p {
+    text-align: center;
+    margin-bottom: 3px;
+}
+
 /* IMAGE STYLES */
 #profile-pic {
     max-width: 86.66px;
@@ -103,6 +112,10 @@ div.info-row > h3, p {
     display: block;
     width: 100px;
     height: 144px;
+}
+
+#logo {
+    max-height: 10px;
 }
 
 /* LINK STYLES */
@@ -117,10 +130,10 @@ a:visited {
 }
 
 a:hover {
-    color: grey ;
+    color: rgb(121, 121, 121) ;
 }
 
 a:active {
-    color: white;
-    text-shadow: 2px 3px 5px black;
+    color: rgb(70, 70, 70);
+    
 }
