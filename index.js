@@ -74,7 +74,7 @@ function getMovieDetails(idArray){
                     console.log(responseJson);
                 }
             })
-            .catch(err => $('#error-message').text("Oops, something went wrong on our end. Please check back later."))
+            .catch(err => $('#error-message').text("Oops, something went wrong on our end! Please check back later.", err))
        );
     } 
     Promise.all(movieDetailsArray)
