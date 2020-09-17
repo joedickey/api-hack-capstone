@@ -113,7 +113,7 @@ function getPersonDetails(responseJson, name){
     const nameId = responseJson.results[0].id;
     const profilePicUrl = imagePathUrl + profilePicPath;
     if(!displayName || !displayName.replaceAll){
-        $('#error-message').text("Oops! Something went wrong on our end! Please check back later! " + displayName))
+        $('#error-message').text("Oops! Something went wrong on our end! Please check back later! " + displayName)
     }
     const formattedDataName = displayName.replaceAll(" ","").replaceAll("é","e").replaceAll("-", "").replaceAll(".", "").toLowerCase(); //****revisit */
     const formattedInputName = name.replaceAll(" ","").replaceAll("é","e").replaceAll("-", "").replaceAll(".", "").toLowerCase();
