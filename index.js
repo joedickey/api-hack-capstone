@@ -67,7 +67,7 @@ function getMovieDetails(idArray){
            fetch(url)
             .then(response => response.json())
             .then(function(responseJson){
-                if(responseJson.poster_path !== null && responseJson.release_date.substring(0, 4) <= new Date().getFullYear() && responseJson.release_date.substring(0, 4) !== "" && responseJson.genres.length > 0 && responseJson.imdb_id !== null && (responseJson.vote_count >= 10 && responseJson.popularity > 1)){
+                if(responseJson.poster_path !== null && responseJson.release_date !== undefined && responseJson.release_date.substring(0, 4) <= new Date().getFullYear() && responseJson.release_date.substring(0, 4) !== "" && responseJson.genres.length > 0 && responseJson.imdb_id !== null && (responseJson.vote_count >= 10 && responseJson.popularity > 1)){
                     return responseJson; // filtering out results with broken images, unreleased movies, and movies without a genre listed.
                 } else {
                     console.log("filtered out based on perimeters");
@@ -104,23 +104,15 @@ function getMoviesList(id){
 
 function getPersonDetails(responseJson, name){
     //get ID number for person and display image and name
-    //if(!responseJson || !displayName.replaceAll){
-   // $('#error-message').text("Oops!" + responseJson.results[0].name);
-        //return 
-    //}
     const displayName = responseJson.results[0].name;
     const profilePicPath = responseJson.results[0].profile_path;
     const nameId = responseJson.results[0].id;
     const profilePicUrl = imagePathUrl + profilePicPath;
-    // if(!displayName || !displayName.replaceAll){
-    // //     $('#error-message').text("Oops! Something went wrong on our end! Please check back later! " + displayName)
-    // // }
-    const formattedDataName = displayName.toLowerCase();
-    //const formattedDataName = displayName.replaceAll(" ","").replaceAll("é","e").replaceAll("-", "").replaceAll(".", "").toLowerCase();
+    const formattedDataName = displayName.trim().replace("é","e").replace("è","e").replace("ë", "e").replace("ü", "u").replace("ö", "o").replace("á", "a").replace("-", " ").replace(".", "").toLowerCase();
     //$('#error-message').append("2" + name); 
-    const formattedInputName = name.toLowerCase();
-    //const formattedInputName = name.replaceAll(" ","").replaceAll("é","e").replaceAll("-", "").replaceAll(".", "").toLowerCase();
+    const formattedInputName = name.trim().replace("é","e").replace("è","e").replace("ë", "e").replace("ü", "u").replace("ö", "o").replace("á", "a").replace("-", " ").replace(".", "").toLowerCase();
     //$('#error-message').append("3" + name); 
+    console.log("Name format match: " + formattedDataName + " " + formattedInputName);
     if(formattedDataName == formattedInputName){
         actorProfile(profilePicUrl, displayName);
         getMoviesList(nameId);
@@ -147,7 +139,7 @@ function getPersonByName(name){
             }
         }
             )
-        // .catch(err => $('#error-message').text("Oops, something went wrong on our end! Please check back later! " + err));
+        .catch(err => $('#error-message').text("Oops, something went wrong on our end! Please check back later! " + err));
 }
 
 // EVENT HANDLERS 
