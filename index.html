@@ -14,21 +14,25 @@
 </head>
 <body>
     <header class="homescreen">
-        <div class="wrapper">
+        <div id="header-content" class="wrapper">
         <h1>Movies from Best to Worst...</h1>
-            <div class="section">
-            <h2>Search for your favorite actor</h2>
-                <form id="search-form" autocomplete="on">
-                    <input type="text" name="search-bar" id="search-bar" autofocus>
-                    <input type="submit" value="Search">
-                 </form>
+            <div id="header-format" class="section">
+                <div id="search-element" class="search-element">
+                    <h2>Search for your favorite actor</h2>
+                    <form id="search-form" autocomplete="on">
+                        <input type="text" name="search-bar" id="search-bar" autofocus>
+                        <input type="submit" value="Search">
+                    </form>
+                </div>
                 <p id="error-message"></p>
-                <div class="actor-profile">
+                <div id="actor-profile" class="actor-profile">
                 </div>
              </div>
         </div>
     </header>
 
+    <div id="header-placeholder" class="hidden"></div>
+    
     <main>
         <div class="wrapper hidden">
             <div class="section">

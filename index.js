@@ -31,6 +31,31 @@ function showFooter(){
     $('footer').removeClass('hidden');
 
 }
+
+function floatingHeader(){
+    $(window).scroll(function(event){
+        console.log($(window).scrollTop());
+        if($(window).scrollTop() > 325){
+            $('header').addClass('sticky');
+            $('#header-placeholder').removeClass('hidden');
+            $('#header-content').removeClass('wrapper');
+            $('#header-format').addClass('sticky-wrapper').removeClass('section');
+            $('#actor-profile').addClass('sticky-actor-profile').removeClass('actor-profile');
+            $('h1').addClass('hidden');
+            $('#display-name').addClass('display-name-sticky');
+            $('#search-element').removeClass('search-element')
+        } else {
+            $('header').removeClass('sticky');
+            $('#header-placeholder').addClass('hidden');
+            $('#header-content').addClass('wrapper');
+            $('#header-format').removeClass('sticky-wrapper').addClass('section');
+            $('#actor-profile').removeClass('sticky-actor-profile').addClass('actor-profile');
+            $('h1').removeClass('hidden');
+            $('#display-name').removeClass('display-name-sticky');
+            $('#search-element').addClass('search-element')
+        }
+    })
+}
   
 
 function displayMovieDetails(movieList){
@@ -174,6 +199,7 @@ function watchForm(){
 
 $(function(){
     watchForm();
+    floatingHeader();
     //getPersonByName();
     //getPersonDetails();
 });
