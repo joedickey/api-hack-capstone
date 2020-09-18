@@ -15,6 +15,17 @@ function actorProfile(image, name){
    return $('.actor-profile').html(`<img id="profile-pic" src="${image}" alt="Actor Picture">
     <h3 id="display-name">${name}</h3>`)
 }
+
+function homescreenTransition(){
+    $('header').removeClass('homescreen');
+}
+
+function showResults(){
+    // removes .hidden class from footer
+    $('.wrapper').removeClass('hidden');
+
+}
+
 function showFooter(){
     // removes .hidden class from footer
     $('footer').removeClass('hidden');
@@ -29,7 +40,7 @@ function displayMovieDetails(movieList){
     
         $('#results').append(
             `<li class="movie-display">
-                 <span id="broken-image-format"><a href="${linkToMovieURL}${movieList[i].id}" target="_blank"><img src="${imagePathUrl + movieList[i].poster_path}" alt="Movie Poster" class="poster"></a></span>
+                 <a href="${linkToMovieURL}${movieList[i].id}" target="_blank"><img src="${imagePathUrl + movieList[i].poster_path}" alt="Movie Poster" class="poster"></a>
                 <div class="text-elements">
                      <div class="info-row">
                         <h3 class="title"><a href="${linkToMovieURL}${movieList[i].id}" target="_blank">${movieList[i].title}</a></h3>
@@ -155,8 +166,10 @@ function watchForm(){
         $('#results').empty();
         $('.actor-profile').empty();
         console.clear();
+        homescreenTransition();
+        showResults();
         showFooter();
-    })
+    });
 }
 
 $(function(){

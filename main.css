@@ -1,7 +1,48 @@
+/* FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap'); /* font-family: 'Lato', sans-serif; */
+@font-face {
+    font-family: 'ROAD MOVIE';
+    src: url('fonts/ROADMOVIE.woff2') format('woff2'),
+        url('fonts/ROADMOVIE.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+} 
+
+/*ROADMOVIE FONT
+for personal use  only
+commercial licenses & complete set available
+contact
+billyargel@gmail.com
+visit:
+billyargel.blogspot.com*?
+
+
 /* ELEMENT STYLES */
 
 * {
     box-sizing: border-box;
+}
+
+header {
+    background-color: #6D9DC5;
+}
+
+header.homescreen {
+    height: 1000px;
+}
+
+main {
+    background-color: #97D8C4;
+}
+
+footer {
+    background-color: #6D9DC5;
+}
+
+div.footer-div {
+    padding-bottom: 10px;
 }
 
 .wrapper {
@@ -10,7 +51,7 @@
      justify-content: center;
      height: 100%;
      align-items: center;
-    
+     padding: 0px 10px;
  }
 
 .section {
@@ -21,11 +62,21 @@
     
 }
 
+input {
+    box-shadow: 1px .5px 3px #4075A0;
+}
+
+input#search-bar {
+    border: none;
+    padding: 2px 3px;
+}
+
 .actor-profile {
     display: flex;
     flex-direction: column;
     align-items: center; 
     margin-top: 50px;
+
 }
 
 ul#results {
@@ -38,7 +89,9 @@ li.movie-display {
     flex-direction: row;
     max-width: 800px;
     margin-bottom: 40px;
-    padding: 0px 10px;
+    padding: 10px 10px;
+    background-color: #EFF2F1;
+    box-shadow: 1px 1px 5px #389478;
 
 }
 
@@ -56,20 +109,34 @@ div.info-row {
     display: none;
 }
 
+
 /* TEXT STYLES */
 
 h1 {
-    padding: 0px 5px ;
+    font-family: 'Road Movie';
+    padding: 5px ;
+    text-align: center;
+    display: flex;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    margin-bottom: 0px;
+    font-size: 50px;
 }
 
-h1, h2 , h3 {
-    font-family: Arial, Helvetica, sans-serif;
+h2, h3 {
+    font-family: 'Lato', sans-serif;
     text-align: center;
     display: flex;
 }
 
+p, input {
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter
+}
+
 #display-name {
-  margin-top: 5px;
+    margin-top: 5px;
+    margin-bottom: 0px;
 }
 
 .title {
@@ -80,9 +147,16 @@ h1, h2 , h3 {
     padding-top: 2px;
 }
 
+.genre-tags {
+    padding-top: 2px;
+    font-weight: normal;
+}
+
 #error-message {
     color: red;
     text-align: center;
+    margin-top: 5px;
+    background-color: white;
 }
 
 div.info-row > h3, p {
@@ -95,6 +169,7 @@ div.info-row > h3, p {
     border: 1px solid black;
     text-align: center;
     margin-right: 8px;
+    margin-left: 2px;
 
 }
 
@@ -105,21 +180,27 @@ div.info-row > h3, p {
 footer p {
     text-align: center;
     margin-bottom: 3px;
+    padding-top: 15px;
+    font-weight: normal;
 }
 
 /* IMAGE STYLES */
+
 #profile-pic {
     max-width: 86.66px;
+    box-shadow: 1px 1px 3px #4075A0;
 }
 
-#broken-image-format, .poster {
+.poster {
     display: block;
     width: 100px;
     height: 144px;
+    box-shadow: 1px 1px 3px #789189;
 }
 
 #logo {
     max-height: 10px;
+    
 }
 
 

@@ -13,23 +13,25 @@
     <title>Movies from Best to Worst</title>
 </head>
 <body>
-    <header>
-
-    </header>
-
-    <main>
+    <header class="homescreen">
         <div class="wrapper">
             <h1>Movies from Best to Worst...</h1>
             <div class="section">
                 <h2>Search for your favorite actor</h2>
                     <form id="search-form" autocomplete="on">
-                        <input type="text" name="search-bar" id="search-bar">
+                        <input type="text" name="search-bar" id="search-bar" autofocus>
                         <input type="submit" value="Search">
                     </form>
                 <p id="error-message"></p>
                 <div class="actor-profile">
                 </div>
             </div>
+        </div>
+    </header>
+    
+
+    <main>
+        <div class="wrapper hidden">
             <div class="section">
                 <ul id="results">
                 </ul>
@@ -38,7 +40,7 @@
     </main>
 
     <footer class="hidden">
-        <div class="section">
+        <div class="section footer-div">
             <a href="https://www.themoviedb.org/" target="_blank">
                 <p>This product uses the TMDb API but is not endorsed or certified by TMDb.</p>
                 <img  id="logo" src="images/tmdb-logo.svg" alt="TMDb Logo">
