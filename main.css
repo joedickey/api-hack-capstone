@@ -46,6 +46,7 @@ billyargel.blogspot.com*?
 .sticky-actor-profile {
     display: flex;
     flex-direction: row;
+    align-items: flex-end;
 }
 
 .display-name-sticky {

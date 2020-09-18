@@ -22,7 +22,7 @@ function homescreenTransition(){
 
 function showResults(){
     // removes .hidden class from footer
-    $('.wrapper').removeClass('hidden');
+    $('main').removeClass('hidden');
 
 }
 
