@@ -12,7 +12,7 @@ Movie MPAA rating: https://api.themoviedb.org/3/movie/13/release_dates?api_key=d
 
 // HTML TEMPLATES 
 function actorProfile(image, name){
-   return $('.actor-profile').html(`<img id="profile-pic" src="${image}" alt="Actor Picture">
+   return $('#actor-profile').html(`<img id="profile-pic" src="${image}" alt="Actor Picture">
     <h3 id="display-name">${name}</h3>`)
 }
 
@@ -154,7 +154,8 @@ function getPersonDetails(responseJson, name){
         getMoviesList(nameId);
     }
     else {
-        return $('#error-message').text("We could not find an actor with that name.")
+        return $('#error-message').text("We could not find an actor with that name.");
+              
     }
 }
 
@@ -189,7 +190,7 @@ function watchForm(){
         $('#search-bar').val('');
         $('#error-message').text('');
         $('#results').empty();
-        $('.actor-profile').empty();
+        $('#actor-profile').empty();
         console.clear();
         homescreenTransition();
         showResults();
