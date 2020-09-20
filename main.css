@@ -25,6 +25,11 @@ billyargel.blogspot.com*?
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+    background-color: #6D9DC5;
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;

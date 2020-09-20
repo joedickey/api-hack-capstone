@@ -34,7 +34,7 @@ function showFooter(){
 
 function floatingHeader(){
     $(window).scroll(function(event){
-        console.log($(window).scrollTop());
+        //console.log($(window).scrollTop());
         if($(window).scrollTop() > 325){
             $('header').addClass('sticky');
             $('#header-placeholder').removeClass('hidden');
