@@ -155,7 +155,7 @@ div.info-row {
 /* TEXT STYLES */
 
 h1 {
-    font-family: 'Road Movie';
+    font-family: 'Road Movie', serif;
     padding: 5px ;
     text-align: center;
     display: flex;
