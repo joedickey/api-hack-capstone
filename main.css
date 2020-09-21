@@ -297,6 +297,10 @@ a:active {
         display: none;
     }
 
+    h2 {
+        margin-bottom: 5px ;
+    }
+
     .sticky-wrapper {
         display: flex;
         flex-direction: row;
@@ -315,7 +319,7 @@ a:active {
 
 @media all and (max-width: 450px) {
     h2 {
-        margin-bottom: 10px ;
+        margin-bottom: 5px ;
     }
 
     header.sticky {
@@ -332,7 +336,7 @@ a:active {
     }
 
     #submit {
-        margin-top: 5px;
+        margin-top: 3px;
     }
 
     #search-form {
