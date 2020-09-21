@@ -23,8 +23,8 @@ The title and poster image are clickable links to the film's page on the TMDb we
 ***
 
 **Technology Used:**
-    -HTML
-    -CSS
-    -JavaScript
-    -jQuery
-    -Asynchronous API requests
+* HTML
+* CSS
+* JavaScript
+* jQuery
+* Asynchronous API requests
