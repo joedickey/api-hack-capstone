@@ -68,6 +68,12 @@ header.sticky {
     width: 100%;
     position: fixed;
     height: 131.5px;
+    transform: translateZ(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    -webkit-transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
 }
 
 header.homescreen {
@@ -316,11 +322,21 @@ a:active {
         width: 100%;
         position: fixed;
         height: 142px;
+        transform: translateZ(0);
+        -moz-transform: translatez(0);
+        -ms-transform: translatez(0);
+        -o-transform: translatez(0);
+        -webkit-transform: translateZ(0);
+        -webkit-font-smoothing: antialiased;
       
     }
 
     #submit {
         margin-top: 5px;
+    }
+
+    #search-form {
+        flex-wrap: nowrap;
     }
 
     .sticky-actor-profile {
