@@ -3,13 +3,6 @@ const imagePathUrl = "https://image.tmdb.org/t/p/original"
 const apiKeyQuery = "?api_key=df3341688556ba5dadfc14be29cc9299"
 const linkToMovieURL = "https://www.themoviedb.org/movie/"
 
-/* other links 
-Get ID for person: https://developers.themoviedb.org/3/search/search-people
-Movies by person: https://developers.themoviedb.org/3/people/get-person-movie-credits
-Movie further details: https://api.themoviedb.org/3/movie/497?api_key=df3341688556ba5dadfc14be29cc9299&language=en-US
-Movie MPAA rating: https://api.themoviedb.org/3/movie/13/release_dates?api_key=df3341688556ba5dadfc14be29cc9299
-*/
-
 // HTML TEMPLATES 
 function actorProfile(image, name){
    return $('#actor-profile').html(`<img id="profile-pic" src="${image}" alt="Actor Picture">
@@ -33,8 +26,8 @@ function showFooter(){
 }
 
 function floatingHeader(){
+    // adds sticky header when scrolling down page
     $(window).scroll(function(event){
-        //console.log($(window).scrollTop());
         if($(window).scrollTop() > 325){
             $('header').addClass('sticky');
             $('#header-placeholder').removeClass('hidden');
@@ -145,9 +138,7 @@ function getPersonDetails(responseJson, name){
     const nameId = responseJson.results[0].id;
     const profilePicUrl = imagePathUrl + profilePicPath;
     const formattedDataName = displayName.trim().replace("é","e").replace("è","e").replace("ë", "e").replace("ü", "u").replace("ö", "o").replace("á", "a").replace("-", " ").replace(".", "").toLowerCase();
-    //$('#error-message').append("2" + name); 
     const formattedInputName = name.trim().replace("é","e").replace("è","e").replace("ë", "e").replace("ü", "u").replace("ö", "o").replace("á", "a").replace("-", " ").replace(".", "").toLowerCase();
-    //$('#error-message').append("3" + name); 
     console.log("Name format match: " + formattedDataName + " " + formattedInputName);
     if(formattedDataName == formattedInputName){
         actorProfile(profilePicUrl, displayName);
@@ -201,6 +192,4 @@ function watchForm(){
 $(function(){
     watchForm();
     floatingHeader();
-    //getPersonByName();
-    //getPersonDetails();
 });
