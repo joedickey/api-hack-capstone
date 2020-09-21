@@ -1,6 +1,6 @@
 # Movies from Best to Worst
 
-View the live site [here](https://joedickey.github.io/movies-from-best-to-worst/
+View the live site [here](https://joedickey.github.io/movies-from-best-to-worst/)
 
 ***
 
