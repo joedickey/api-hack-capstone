@@ -1,16 +1,16 @@
 # Movies from Best to Worst
 
-View the live site [here](https://joedickey.github.io/api-hack-capstone/)
+View the live site [here](https://joedickey.github.io/movies-from-best-to-worst/
 
 ***
 
-Home Screen
+**Landing Page**
 ![Screenshot 1](/images/screenshots/screenshot-1.png)
 
-Search Results
+**Search Results**
 ![Screenshot 2](/images/screenshots/screenshot-2.png)
 
-Sticky Header on Scroll
+**Sticky Header on Scroll**
 ![Screenshot 3](/images/screenshots/screenshot-3.png)
 
 ***
