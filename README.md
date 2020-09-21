@@ -16,9 +16,7 @@ View the live site [here](https://joedickey.github.io/movies-from-best-to-worst/
 ***
 
 **Summary:**
-This web app will return a list of an actor's filmography ranked from best to worst (based on TMDb's API user ratings) when searched for by name.
-Also each result provides a summary and genre listing for the film along with the film's poster image. 
-The title and poster image are clickable links to the film's page on the TMDb website.
+This web app returns a list of an actor's filmography ranked from best to worst (based on TMDb's API user ratings) when searched for by name. Each result provides a summary and genre listing for the film along with the film's poster image. The title and poster image are clickable links to the film's page on the TMDb website.
 
 ***
 
@@ -27,4 +25,4 @@ The title and poster image are clickable links to the film's page on the TMDb we
 * CSS
 * JavaScript
 * jQuery
-* Asynchronous API requests
+* Asynchronous API calls
